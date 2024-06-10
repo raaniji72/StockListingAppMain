@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu book</mat-icon>
+    </button>
+    <span>DARS TRADE</span>
+    <span class="example-spacer"></span>
+    
+    <a
+    *ngIf="authService.isLoggedIn()"
+    href="/dashboard"
+     mat-icon-button class="example-icon favorite-icon db" aria-label="Example icon-button with heart icon">
+        Dashboard
+    </a>
+
+    <a
+    *ngIf="authService.isLoggedIn()"
+    href="/wishlist"
+     mat-icon-button class="example-icon favorite-icon wl" aria-label="Example icon-button with heart icon">
+        Wishlist
+    </a>
+    
+    <a
+    *ngIf="!authService.isLoggedIn()"
+    href="/login"
+     mat-icon-button class="example-icon favorite-icon or" aria-label="Example icon-button with heart icon">
+        Login
+    </a>
+
+    <a 
+    *ngIf="!authService.isLoggedIn()"
+    href="/signup"
+    mat-icon-button class="example-icon favorite-icon mr" aria-label="Example icon-button with heart icon">
+        Sign Up
+    </a>
+
+    <button
+    *ngIf="authService.isLoggedIn()"
+    (click)="logOut()"
+     mat-icon-button class="example-icon favorite-icon nr" aria-label="Example icon-button with heart icon">
+        Log out
+    </button>
+   
+  </mat-toolbar>
